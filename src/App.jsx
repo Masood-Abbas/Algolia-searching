@@ -8,11 +8,12 @@ const apiKey = import.meta.env.VITE_REACT_APP_SEARCH_API_KEY;
 const searchClient = algoliasearch(appId, apiKey);
 
 function Hit({ hit }) {
+  console.log(hit)
   return (
     <article>
       <p>{hit.categories ? hit.categories[0] : "No Category"}</p>
       <h1>{hit.name}</h1>
-      <p>${hit.price}</p>
+      <p>${hit.salePrice}</p>
     </article>
   );
 }
